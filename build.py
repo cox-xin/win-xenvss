@@ -84,13 +84,17 @@ def get_configuration(debug):
 def shell(command):
     print(command)
     sys.stdout.flush()
+	
+    with subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE) as p:
+        output, errors = p.communicate()
+    lines = output.splitlines()
 
-    pipe = os.popen(command, 'r', 1)
-
-    for line in pipe:
+    for line in lines:
         print(line.rstrip())
 
-    return pipe.close()
+    p.wait()	
+		
+    return p.returncode
 
 
 class msbuild_failure(Exception):
@@ -117,7 +121,7 @@ def msbuild(name, arch, debug):
     status = shell('msbuild.bat')
     os.chdir(cwd)
 
-    if (status != None):
+    if (status != 0):
         raise msbuild_failure(configuration)
 
 def archive(name):
