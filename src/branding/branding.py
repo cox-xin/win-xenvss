@@ -1,5 +1,5 @@
 branding = {
-    "manufacturerLong": "Citrix Systems Inc.",
-    "pvToolsLong": "Citrix PV Tools for Virtual Machines",
-    "vssLong": "Citrix VSS Provider",
+    "manufacturerLong": "XCP-ng",
+    "pvToolsLong": "XCP-ng PV Tools for Virtual Machines",
+    "vssLong": "XCP-ng VSS Provider",
 }

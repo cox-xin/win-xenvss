@@ -45,7 +45,7 @@ public :
 class CXenVssModule _AtlModule;
 
 //-VSS IDs---------------------------------------
-static wchar_t* WSZ_XenVssProviderName    = L"Citrix XEN VSS Provider";
+static wchar_t* WSZ_XenVssProviderName    = L"XCP-ng XEN VSS Provider";
 static wchar_t* WSZ_XenVssProviderVer     = L"1.0";
 
 static const GUID GUID_XenVssProviderId   = 
